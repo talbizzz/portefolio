@@ -3,7 +3,6 @@ import './App.css';
 import Welcome from './Welcome/Welcome.js';
 import Header from './Header/Header';
 import About from './About/About';
-import Appointments from './Appointments/Appointments.js';
 
 class App extends React.Component {
   constructor() {
@@ -35,10 +34,7 @@ class App extends React.Component {
             :(
               <div>
                 <Header className="header"/>
-                <div style={{marginTop:`${this.state.aboutPos}`}}>
-                  <div><About className="about"/></div>
-                  <div><Appointments className="appointments"/></div>
-                </div>
+                <About className="about" aboutPos={this.state.aboutPos}/>
               </div>
             )
         }

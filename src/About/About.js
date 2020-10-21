@@ -9,13 +9,9 @@ class About extends React.Component {
 		}
 	}
 	componentDidMount = () => {
-		const windowHeight= window.innerHeight;
 		const container = document.querySelector("div.center");
 	    window.addEventListener('scroll', () => {
 			let rect = container.getBoundingClientRect();
-			console.log(container.offsetHeight)
-			console.log(rect);
-			console.log(windowHeight)
 			if(rect.y < (window.innerHeight*(2/3))){
 				this.setState({ scroll: true });
 			}else {
@@ -25,7 +21,7 @@ class About extends React.Component {
 	}
 	render(){
 		return(
-			<div className=" mw8 mw8-ns center" >
+			<div className="about mw8 mw8-ns center" style={{marginTop:`${this.props.aboutPos}`}}>
 				{
 					this.state.scroll
 						?(
