@@ -1,5 +1,6 @@
 import React from 'react';
-import './Welcome.css'
+import './Welcome.css';
+import {useSpring, animated, interpolate} from 'react-spring'
 
 const Welcome = () => {
 	return(
