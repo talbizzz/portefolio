@@ -3,8 +3,9 @@ import './App.css';
 import Welcome from './Welcome/Welcome.js';
 import Header from './Header/Header';
 import About from './About/About';
+import Appointments from './Appointments/Appointments.js'
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor() {
     super(); 
     this.state= {
@@ -30,11 +31,12 @@ class App extends React.Component {
       <div className="App" >
         {
           !this.state.userActive
-            ?<div className="header"><Welcome/></div>
+            ?<Welcome/>
             :(
               <div>
                 <Header className="header"/>
-                <About className="about" aboutPos={this.state.aboutPos}/>
+                <About aboutPos={this.state.aboutPos}/>
+                <Appointments/>
               </div>
             )
         }
@@ -43,4 +45,3 @@ class App extends React.Component {
   }
 }
 
-export default App;
