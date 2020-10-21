@@ -1,11 +1,11 @@
 
 
 .container1 {
-  animation: pulse 2s ;
+  animation: pulse 1s ;
   animation-iteration-count: 1;
 
 }
 
 .description{
-	animation: pulse 5s;
+	animation: pulse 1s;
 }
