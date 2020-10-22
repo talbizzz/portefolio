@@ -12,7 +12,6 @@ const Header = () => {
 						</div>
 						<span className="f-headline white lh-solid baskerville">Céline Akçağ</span> <br/>
 						<span className="f1 lh-title white baskerville ml5">lyrischer Mezzosopran</span><br/>
-						<Knowmore/>
 					</div>
 				</div>	
 		</div>

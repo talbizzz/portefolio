@@ -39,7 +39,7 @@ export default class About extends React.Component {
 								  		</div>
 									</article>
 								</div>
-								<div className="description fl white w-40 mt7 mr2 " >
+								<div className="description fl white w-40 mt5 mr2 " >
 									<p>
 										Céline Akçağ, in Zürich geboren, begann ihre Gesangsausbildung bei ihrer Mutter. Nach dem Vorstudium am Konservatorium Zürich bei Ulrike Andersen absolvierte sie ihren Bachelor in Oper, Konzert und Pädagogik in Freiburg i.Br. bei Prof. Dorothea Wirtz. Ein Auslandsemester verbrachte sie an der Royal Academy of Music (LDN) bei Mary Nelson und Iain Ledingham. An der Theaterakademie August Everding (MUC) absolvierte sie den Master in Musiktheater/Operngesang bei KS Prof.
 									</p>

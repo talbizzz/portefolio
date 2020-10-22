@@ -1,14 +1,43 @@
 import React from 'react';
 import './Welcome.css';
-import {useSpring, animated, interpolate} from 'react-spring'
+import {Spring, config} from 'react-spring/renderprops';
 
-const Welcome = () => {
-	return(
-		<div className="container pa7">
-			<h1 className="tl white baskerville welcome">Welcome !</h1>
-			<h3 className="tl white baskerville welcome">let's learn more about Celine</h3>
-		</div>	
-	)
+export default class Welcome extends React.Component {
+	constructor() {
+		super();
+		this.state= {
+			right:0,
+			left:0
+		}
+	}
+
+	componentDidMount = () => {
+		( () => {
+			let header = document.querySelector('.welcome');
+			let rect = header.getBoundingClientRect();
+			console.log(rect)
+		})()
+	}
+
+	render(){
+		return(
+			<div className="container">
+				<Spring
+					config={config.molasses}
+					from={{width: '0%',left:"200%"}}
+					to={{width: '50%',left:"0%"} }
+				>
+					{props => <div className="mt6 lh-solid tl white Courier welcome welcomeRight" style={props}>Celine</div>}
+				</Spring>
+				<Spring
+					config={config.molasses}
+					from={{width: '0%', right:"200%"}}
+					to={{width: '100%', right:"100%"}}
+				>
+					{props => <div className="lh-solid tr white Courier welcome " style={props}>Akcag</div>}
+				</Spring>
+			</div>	
+		)
+	}
 }
 
-export default Welcome;

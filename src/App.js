@@ -15,13 +15,13 @@ export default class App extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('mousemove', ()=> {
-      // skip the welcome window
+    window.addEventListener('mouseclick', ()=> {
+      // used to skip the welcome window
       this.setState({userActive: true});
-      // get the header's height, we'll be used to adapt the display of the About component (mt >= header's height) 
+      // gets the header's height, we'll be used to adapt the display of the About component (mt >= header's height) 
       let header = document.querySelector('.header');
       let rect = header.getBoundingClientRect();
-      this.setState({aboutPos : (parseInt(rect.height).toString() + "px") });
+      this.setState({aboutPos : ((parseInt(rect.height)+20).toString() + "px") });
     })
   }
 
