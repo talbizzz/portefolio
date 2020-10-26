@@ -4,9 +4,15 @@
 .welcome{
   font-size: 14rem;
   font-family:"Mak";
+}
 
-  animation: pulse 5s ;
-  animation-iteration-count: 1;
+.item {
+  width: 100%;
+  height: 500px;
+  background: url(https://static.wixstatic.com/media/879330_256c498602b34f3597b78c4e9cb92f8b~mv2_d_1667_2500_s_2.jpg/v1/fill/w_749,h_1124,al_c,q_90,usm_0.66_1.00_0.01/879330_256c498602b34f3597b78c4e9cb92f8b~mv2_d_1667_2500_s_2.webp) center no-repeat;
+  text-align: center;
+  color: #FFF;
+  font-size: 3em;
 }
 
 @keyframes pulse {
@@ -29,8 +35,10 @@
   height: 100%;
   background:rgba(255,255,255,0.5);
 
-  background: url("https://static.wixstatic.com/media/879330_51337e4b854a4a82b279c19b0e82fdb2~mv2_d_2500_1667_s_2.jpg/v1/fill/w_1686,h_1124,al_c,q_90,usm_0.66_1.00_0.01/879330_51337e4b854a4a82b279c19b0e82fdb2~mv2_d_2500_1667_s_2.webp");
+  background: black;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+
+  z-index: -10;
 }

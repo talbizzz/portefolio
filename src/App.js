@@ -15,13 +15,16 @@ export default class App extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('mouseclick', ()=> {
-      // used to skip the welcome window
-      this.setState({userActive: true});
-      // gets the header's height, we'll be used to adapt the display of the About component (mt >= header's height) 
-      let header = document.querySelector('.header');
-      let rect = header.getBoundingClientRect();
-      this.setState({aboutPos : ((parseInt(rect.height)+20).toString() + "px") });
+    window.addEventListener('scroll', ()=> {
+      if(window.scrollY >= 40000){
+        console.log(window.scrollY)
+        // used to skip the welcome window
+        this.setState({userActive: true});
+        // gets the header's height, we'll be used to adapt the display of the About component (mt >= header's height) 
+        let header = document.querySelector('.header');
+        let rect = header.getBoundingClientRect();
+        this.setState({aboutPos : ((parseInt(rect.height)+20).toString() + "px") });
+      }
     })
   }
 
@@ -31,7 +34,10 @@ export default class App extends React.Component {
       <div className="App" >
         {
           !this.state.userActive
-            ?<Welcome/>
+            ?
+              <div>
+                <Welcome/>
+              </div>
             :(
               <div>
                 <Header className="header"/>
