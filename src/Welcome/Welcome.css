@@ -1,18 +1,8 @@
-.welcomeRight{
-  position:relative;
-}
 .welcome{
   font-size: 14rem;
   font-family:"Mak";
-}
-
-.item {
-  width: 100%;
-  height: 500px;
-  background: url(https://static.wixstatic.com/media/879330_256c498602b34f3597b78c4e9cb92f8b~mv2_d_1667_2500_s_2.jpg/v1/fill/w_749,h_1124,al_c,q_90,usm_0.66_1.00_0.01/879330_256c498602b34f3597b78c4e9cb92f8b~mv2_d_1667_2500_s_2.webp) center no-repeat;
-  text-align: center;
-  color: #FFF;
-  font-size: 3em;
+  position:relative;
+  font:"rgb(215, 128, 156)";
 }
 
 @keyframes pulse {
@@ -41,4 +31,8 @@
   background-repeat: no-repeat;
 
   z-index: -10;
+}
+
+.about {
+  font-family: "Mak";
 }

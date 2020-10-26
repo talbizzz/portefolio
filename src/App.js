@@ -3,7 +3,8 @@ import './App.css';
 import Welcome from './Welcome/Welcome.js';
 import Header from './Header/Header';
 import About from './About/About';
-import Appointments from './Appointments/Appointments.js'
+import Appointments from './Appointments/Appointments.js';
+import Button from './Button/Button.js'
 
 export default class App extends React.Component {
   constructor() {
@@ -14,18 +15,10 @@ export default class App extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-    window.addEventListener('scroll', ()=> {
-      if(window.scrollY >= 40000){
-        console.log(window.scrollY)
-        // used to skip the welcome window
-        this.setState({userActive: true});
-        // gets the header's height, we'll be used to adapt the display of the About component (mt >= header's height) 
-        let header = document.querySelector('.header');
-        let rect = header.getBoundingClientRect();
-        this.setState({aboutPos : ((parseInt(rect.height)+20).toString() + "px") });
-      }
-    })
+  onClickChange = (e) => {
+    e.preventDefault();
+    console.log('Le lien a été cliqué.');
+    this.setState({userActive:true})
   }
 
 
@@ -36,7 +29,8 @@ export default class App extends React.Component {
           !this.state.userActive
             ?
               <div>
-                <Welcome/>
+                <Welcome className=""/>
+                <Button onClickChange= {this.onClickChange}/>
               </div>
             :(
               <div>
