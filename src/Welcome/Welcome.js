@@ -41,9 +41,9 @@ export default class Welcome extends React.Component {
 					data-aos-duration="1000" 
 					data-aos-mirror="true"
 				>
-					<div className="aosAnchor2 mt6"></div>
+					<div className="aosAnchor2 mt5"></div>
 					<span className="welcome f-headline lh-solid ">lyrischer Mezzosopran</span>
-					<div className="aosAnchor3 mt6"></div>					
+					<div className="aosAnchor3 mt1"></div>					
 				</div>
 				
 			</div>		

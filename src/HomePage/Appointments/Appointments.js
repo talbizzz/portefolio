@@ -1,79 +1,41 @@
-import React from 'react';
-import './Appointments.css'
+	import React, { useState, useCallback } from 'react'
+import { useTransition, animated } from 'react-spring'
+import './Appointments.css';
+import Slides from './Slides/Slides';
 
-const Appointments = ({marginTop}) => {
-	return(
-		<div className="appointments" style={{marginTop:`${marginTop}`}}>
-				
-			<ul className="list pl0 mt0 w-60 center">
-			  <div className=" headline white f1 baskerville" >Termine</div>
-			  <li className="w-100 flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-mrmrs.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Mrmrs</span>
-			        <span className="db white f3 lh-title baskerville">Medium Hexagon, LLC</span>
-			      </div>
-			  </li>
-			  <li
-			    className="flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-jxnblk.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Jxnblk</span>
-			        <span className="db white f3 lh-title baskerville">Large Circle, Inc</span>
-			      </div>
-			  </li>
-			  <li
-			    className="flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-jasonli.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Jason Li</span>
-			        <span className="db white f3 lh-title baskerville">Little Blue Square, Inc</span>
-			      </div>
-			  </li>
-			  <li
-			    className="flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-yavor.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Yavor</span>
-			        <span className="db white f3 lh-title baskerville">Large Circle, Inc</span>
-			      </div>
-			  </li>
-			  <li className="w-100 flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-mrmrs.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Mrmrs</span>
-			        <span className="db white f3 lh-title baskerville">Medium Hexagon, LLC</span>
-			      </div>
-			  </li>
-			  <li
-			    className="flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-jxnblk.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Jxnblk</span>
-			        <span className="db white f3 lh-title baskerville">Large Circle, Inc</span>
-			      </div>
-			  </li>
-			  <li
-				className="flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-jasonli.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Jason Li</span>
-			        <span className="db white f3 lh-title baskerville">Little Blue Square, Inc</span>
-			      </div>
-			  </li>
-			  <li
-			    className="flex items-center lh-copy pa3 ph0-l bb b--white-30">
-			      <img className="w2 h2 w3-ns h3-ns br-100" src="http://tachyons.io/img/avatar-yavor.jpg" alt="" />
-			      <div className="pl3 flex-auto">
-			        <span className="db white f3 lh-title baskerville">Yavor</span>
-			        <span className="db white f3 lh-title baskerville">Large Circle, Inc</span>
-			      </div>
-			  </li>
-			</ul>
+const pages = [
+  ({ style }) => 
+  <animated.div 
+    style={{ ...style, background: 'url(https://images5.alphacoders.com/107/1075794.jpg) fixed', backgroundSize:"cover" }}
+  >
+  	<Slides/>
+  </animated.div>,
+  ({ style }) => <animated.div style={{ ...style, background: 'url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed' }}><p className="pa4 font f-subheadline lh-title">Termine</p></animated.div>,
+  ({ style }) => <animated.div style={{ ...style, background: 'url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed' }}><p className="pa4 font f-subheadline lh-title">Termine</p></animated.div>,
+  ({ style }) => <animated.div style={{ ...style, background: 'url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed' }}><p className="pa4 font f-subheadline lh-title">Termine</p></animated.div>,
+  ({ style }) => <animated.div style={{ ...style, background: 'url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed' }}><p className="pa4 font f-subheadline lh-title">Termine</p></animated.div>,
+  ({ style }) => <animated.div style={{ ...style, background: 'url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed' }}><p className="pa4 font f-subheadline lh-title">Termine</p></animated.div>,
+  ({ style }) => <animated.div style={{ ...style, background: 'url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed' }}><p className="pa4 font f-subheadline lh-title">Termine</p></animated.div>,
+]
 
-		</div>	
-			
-	)
+export default function Appointments({marginTop}) {
+  const [index, set] = useState(0)
+  const onClick = useCallback(() => set(state => (state + 1) % 7), [])
+  const transitions = useTransition(index, p => p, {
+    from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+    leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+  })
+  return (
+  	<div className="appointments" style={{marginTop:`${marginTop}`}}>
+    	<div className="simple-trans-main" onClick={onClick}>
+      		{transitions.map(({ item, props, key }) => {
+        	const Page = pages[item]
+        	return <Page key={key} style={props} />
+      		})}
+    	</div>
+  	</div>
+
+  )
 }
 
-export default Appointments;

@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
 import Welcome from './Welcome/Welcome.js';
-import Header from './Header/Header';
-import About from './About/About';
-import Appointments from './Appointments/Appointments.js';
-import Button from './Button/Button.js'
+import Button from './Button/Button.js';
+import HomePage from './HomePage/HomePage';
 
 export default class App extends React.Component {
   constructor() {
@@ -18,7 +16,8 @@ export default class App extends React.Component {
   onClickChange = (e) => {
     e.preventDefault();
     console.log('Le lien a été cliqué.');
-    this.setState({userActive:true})
+    this.setState({userActive:true});
+    document.documentElement.scrollTop = 0;
   }
 
 
@@ -34,9 +33,7 @@ export default class App extends React.Component {
               </div>
             :(
               <div>
-                <Header className="header"/>
-                <About aboutPos={this.state.aboutPos}/>
-                <Appointments/>
+                <HomePage/>
               </div>
             )
         }
