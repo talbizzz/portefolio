@@ -1,23 +1,20 @@
-/*.appointments {
-	background: url(https://static.wixstatic.com/media/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.jpg/v1/fill/w_1396,h_932,al_c,q_90,usm_0.66_1.00_0.01/879330_b78feb4b421640a381e8252f05469f9b~mv2_d_2500_1669_s_2.webp) fixed;
-	background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-}*/
-
 .simple-trans-main > div {
   cursor: pointer;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-weight: 800;
-  font-size: 1em;
+  font-size: 5em;
   will-change: transform, opacity;
   text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+  background-color: #FAF5EF;
 }
 
-.font{
-  font-family: "Dancing Script"
+.sectionTitle{
+  font-size: 14rem;
+  font-family: "Mak";
 }

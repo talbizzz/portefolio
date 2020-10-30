@@ -15,11 +15,10 @@ export default class App extends React.Component {
 
   onClickChange = (e) => {
     e.preventDefault();
-    console.log('Le lien a été cliqué.');
+    console.log('userActive', this.state.userActive);
     this.setState({userActive:true});
     document.documentElement.scrollTop = 0;
   }
-
 
   render(){  
     return (
@@ -28,8 +27,7 @@ export default class App extends React.Component {
           !this.state.userActive
             ?
               <div>
-                <Welcome className=""/>
-                <Button onClickChange= {this.onClickChange}/>
+                <Welcome onClickChange= {this.onClickChange}/>
               </div>
             :(
               <div>
