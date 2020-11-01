@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
 import Welcome from './Welcome/Welcome.js';
-import Header from './Header/Header';
-import About from './About/About';
-import Appointments from './Appointments/Appointments.js'
+import HomePage from './HomePage/HomePage';
 
 export default class App extends React.Component {
   constructor() {
@@ -14,29 +12,25 @@ export default class App extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-    window.addEventListener('mousemove', ()=> {
-      // skip the welcome window
-      this.setState({userActive: true});
-      // get the header's height, we'll be used to adapt the display of the About component (mt >= header's height) 
-      let header = document.querySelector('.header');
-      let rect = header.getBoundingClientRect();
-      this.setState({aboutPos : (parseInt(rect.height).toString() + "px") });
-    })
+  onClickChange = (e) => {
+    e.preventDefault();
+    console.log('userActive', this.state.userActive);
+    this.setState({userActive:true});
+    document.documentElement.scrollTop = 0;
   }
-
 
   render(){  
     return (
       <div className="App" >
         {
           !this.state.userActive
-            ?<Welcome/>
+            ?
+              <div>
+                <Welcome onClickChange= {this.onClickChange}/>
+              </div>
             :(
               <div>
-                <Header className="header"/>
-                <About aboutPos={this.state.aboutPos}/>
-                <Appointments/>
+                <HomePage/>
               </div>
             )
         }

@@ -26,8 +26,8 @@ export default function SimpleBackdrop() {
         Read more
       </Button>
       <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
-        <div className="more pa7" style={{backgroundColor:"rgba(255, 255, 255, 0.5)"}}>
-          <p className="navy">
+        <div className="more pa7 mt7" style={{backgroundColor:"rgba(0, 0, 0, 0.5)"}}>
+          <p className="washed-red">
             Céline Akçağ, in Zürich geboren, begann ihre Gesangsausbildung bei ihrer Mutter. Nach dem Vorstudium am Konservatorium Zürich bei Ulrike Andersen absolvierte sie ihren Bachelor in Oper, Konzert und Pädagogik in Freiburg i.Br. bei Prof. Dorothea Wirtz. Ein Auslandsemester verbrachte sie an der Royal Academy of Music (LDN) bei Mary Nelson und Iain Ledingham. An der Theaterakademie August Everding (MUC) absolvierte sie den Master in Musiktheater/Operngesang bei KS Prof. Andreas Schmidt. Zurzeit studiert sie im Konzertmaster an der Hochschule für Musik und Theater München bei KS Prof. Christiane Iven und Okka von der Damerau, sowie im Postgradualen Studiengang Liedduo an der Universität Mozarteum Salzburg bei Prof. Pauliina Tukiainen.
             Meisterkurse mit Vesselina Kasarova, Alessandro De Marchi, Anne Le Bozec, Prof. Claudia Visca, Prof. Ulrike Sonntag, Tobias Kratzer, Gerd Uecker und Nadine Secunde haben ihre Ausbildung erweitert.
             Innerhalb des Studiums sang sie den Hänsel (Hänsel und Gretel, Humperdinck) am kleinen Haus des Theaters Freiburg, sowie an der Theaterakademie August Everding im Prinzregententheater das Glückskind (Der Teufel mit den drei goldenen Haaren, Hanke), Dorabella (Così fan tutte, Mozart) und Vanina (in L'Ancêtre von Saint-Saëns).
