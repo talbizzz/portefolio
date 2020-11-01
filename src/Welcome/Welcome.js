@@ -10,7 +10,7 @@ export default class Welcome extends React.Component {
 	render(){
 		AOS.init();
 		return(
-			<div>
+			<div className="containerWelcome" >
 				<div className="mt6">
 					<div className="aosAnchor"></div>
 					<div 

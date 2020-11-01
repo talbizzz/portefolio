@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Welcome from './Welcome/Welcome.js';
-import Button from './Button/Button.js';
 import HomePage from './HomePage/HomePage';
 
 export default class App extends React.Component {

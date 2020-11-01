@@ -1,35 +1,66 @@
 import React from 'react';
 import About from './About/About';
-import Appointments from './Appointments/Appointments';
+import Gallery from './Gallery/Gallery';
+import Schedule from './Schedule/Schedule';
+import Contact from './Contact/Contact';
+import Navbar from './Navbar/Navbar'
   
 export default class HomePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      clicked: false,
+      gallery: false,
+      appointments:false,
+      contact: false,
     }
   }
-
-  onClickChange = (e) => {
+  onClickAbout = (e) => {
     e.preventDefault();  
-    console.log('clicked', this.state.clicked);
-    this.setState({clicked:true});
+    this.setState({gallery:false, appointments:false, contact:false});
+    document.documentElement.scrollTop = 0;
+  }
+
+  onClickGallery = (e) => {
+    e.preventDefault();  
+    this.setState({gallery:true, appointments:false, contact:false});
+    document.documentElement.scrollTop = 0;
+  }
+  
+  onClickAppointments = (e) => {
+    e.preventDefault();  
+    this.setState({gallery:true, appointments:true, contact:false});
+    document.documentElement.scrollTop = 0;
+  }
+
+  onClickContact = (e) => {
+    e.preventDefault();  
+    this.setState({contact:true, gallery:true, appointments:true});
     document.documentElement.scrollTop = 0;
   }
   
   render(){
     return(
       <div>
+        <Navbar
+          Gallery={this.onClickGallery}
+          Appointments={this.onClickAppointments}
+          Contact={this.onClickContact}
+          About={this.onClickAbout}
+        />
         { 
-          !this.state.clicked 
+          !this.state.gallery 
             ?
-              <div>
-                <About onClickChange={this.onClickChange}/>
-              </div>
-            :(
-              <div>
-                <Appointments onClickChange={this.onClickChange}/>
-              </div>
+              <About onClickChange={this.onClickGallery}/>
+            :(!this.state.appointments
+              ?
+                <Gallery onClickChange={this.onClickAppointments}/>
+              :(!this.state.contact
+                ?
+                  <Schedule onClickChange={this.onClickContact}/>
+                :(
+                  <Contact/>
+                )
+              )  
             )
         }
       </div>
